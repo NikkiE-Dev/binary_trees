@@ -7,7 +7,7 @@
  * Return: NULL or 0
  */
 
-size_t binary_tree_leaves(const binary_tree_t *tree))
+size_t binary_tree_leaves(const binary_tree_t *tree)
 {
 	size_t left_size, right_size, measured_size;
 
