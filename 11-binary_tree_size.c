@@ -9,7 +9,7 @@
 
 size_t binary_tree_size(const binary_tree_t *tree)
 {
-	int left_size, right_size, measured_size;
+	size_t left_size, right_size, measured_size;
 
 	if (tree)
 	{
