@@ -9,19 +9,19 @@
 
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int height_left, height_right, height, size;
+	int left_check, right_check, height, size;
 
 	if (!tree)
 	{
 		return (0);
 	}
 
-	height_left = binary_tree_height(tree->left);
-	height_right = binary_tree_height(tree->right);
-	height = height_right + height_left;
+	left_check = binary_tree_height(tree->left);
+	right_check = binary_tree_height(tree->right);
+	height = right_check + left_check;
 	size = binary_tree_size(tree);
 
-	if ((size == (1 << height)) && (height_left == height_right))
+	if ((size == (1 << height)) && (left_check == right_check))
 	{
 		return (1);
 	}
