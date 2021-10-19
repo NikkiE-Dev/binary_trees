@@ -11,24 +11,26 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int height_left, height_right, height, size;
 
-	if (tree)
+	if (!tree)
 	{
-		height_left = binary_tree_height(tree->left);
-		height_right = binary_tree_height(tree->right);
-		height = height_right + height_left;
-		size = binary_tree_size(tree);
-
-		if ((size == (1 << height)) && (height_left == height_right))
-		{
-			return (1);
-		}
-		else
-		{
-			return (0);
-		}
+		return (0);
 	}
-	return (0);
+
+	height_left = binary_tree_height(tree->left);
+	height_right = binary_tree_height(tree->right);
+	height = height_right + height_left;
+	size = binary_tree_size(tree);
+
+	if ((size == (1 << height)) && (height_left == height_right))
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
+
 /**
  * binary_tree_height -measures the height of a binary tree
  *
