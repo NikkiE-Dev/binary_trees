@@ -12,7 +12,7 @@
  {
 	binary_tree_t *newNode = NULL;
 
-	newNode = malloc(sizeof(struct binary_tree_t));
+	newNode = malloc(sizeof(binary_tree_t));
 
 	if (newNode == NULL || parent == NULL)
 	{
