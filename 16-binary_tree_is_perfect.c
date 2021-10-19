@@ -32,6 +32,34 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 }
 
 /**
+ * binary_tree_size - measures the depth of a node in a binary tree
+ *
+ * @tree: Pointer to the root node of the tree to measure the size
+ * Return: NULL or 0
+ */
+
+size_t binary_tree_size(const binary_tree_t *tree)
+{
+	size_t left_size = 0, right_size = 0, measured_size = 0;
+
+	if (tree)
+	{
+		if (tree->left)
+		{
+			left_size = binary_tree_size(tree->left);
+		}
+		if (tree->right)
+		{
+			right_size = binary_tree_size(tree->right);
+		}
+		measured_size = (left_size + right_size) + 1;
+		return (measured_size);
+	}
+	return (0);
+}
+
+
+/**
  * binary_tree_height -measures the height of a binary tree
  *
  * @tree: Pointer to the root node of the tree to measure the height.
@@ -60,33 +88,6 @@ size_t binary_tree_height(const binary_tree_t *tree)
 		{
 			return (height_right);
 		}
-	}
-	return (0);
-}
-
-/**
- * binary_tree_size - measures the depth of a node in a binary tree
- *
- * @tree: Pointer to the root node of the tree to measure the size
- * Return: NULL or 0
- */
-
-size_t binary_tree_size(const binary_tree_t *tree)
-{
-	size_t left_size = 0, right_size = 0, measured_size = 0;
-
-	if (tree)
-	{
-		if (tree->left)
-		{
-			left_size = binary_tree_size(tree->left);
-		}
-		if (tree->right)
-		{
-			right_size = binary_tree_size(tree->right);
-		}
-		measured_size = (left_size + right_size) + 1;
-		return (measured_size);
 	}
 	return (0);
 }
